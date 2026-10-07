@@ -1,14 +1,29 @@
 import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
+import fs from 'fs';
 import path from 'path';
 import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
   return {
-    plugins: [react(), tailwindcss()],
+    plugins: [
+      react(),
+      tailwindcss(),
+      {
+        name: 'copy-public-to-dist-public',
+        closeBundle() {
+          const distDir = path.resolve('dist');
+          const distPublic = path.resolve('dist/public');
+          const srcPublic = path.resolve('public');
+          if (fs.existsSync(distDir) && fs.existsSync(srcPublic)) {
+            fs.cpSync(srcPublic, distPublic, { recursive: true });
+          }
+        },
+      },
+    ],
     resolve: {
       alias: {
-        '@': path.resolve(__dirname, '.'),
+        '@': path.resolve('.'),
       },
     },
     server: {
