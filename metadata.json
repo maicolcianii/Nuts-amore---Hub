@@ -1,0 +1,6 @@
+{
+  "name": "Nut’s Amore",
+  "description": "Nut’s Amore: dónde comprar, recetario gratis y productos.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

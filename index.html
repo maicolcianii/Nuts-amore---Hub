@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nut’s Amore</title>
+<meta name="description" content="Nut’s Amore: dónde comprar, recetario gratis y productos.">
+<meta property="og:title" content="Nut’s Amore">
+<meta property="og:description" content="Nut’s Amore: dónde comprar, recetario gratis y productos.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script>
+/* ============================================================
+   LINK HUB NUT'S AMORE
+   ============================================================ */
+const LINKS = {
+  recipeBook: "https://recipebook.nutsamore.com/",
+  site: "https://nutsamore.com",
+  es: {
+    store: "https://www.dia.es/chocolates-y-golosinas/cremas-de-cacao-y-de-untar/nuts-amore/c/1m2sF10rs",
+    avellanasDatiles: "https://www.dia.es/chocolates-y-golosinas/cremas-de-cacao-y-de-untar/p/306417",
+    anacardosCoco:    "https://www.dia.es/chocolates-y-golosinas/cremas-de-cacao-y-de-untar/p/306416",
+    mangoAlmendras:   "https://www.dia.es/chocolates-y-golosinas/cremas-de-cacao-y-de-untar/p/311563"
+  },
+  be: {
+    brownAlmond:      "https://www.colruyt.be/fr/produits/39557",
+    pistachioAlmond:  "https://www.colruyt.be/fr/produits/39563",
+    hazelnutDate:     "https://www.colruyt.be/fr/produits/6911"
+  }
+};
+
+const LOGO_SRC_LIST = [
+  "public/nutsamorelogo.webp",
+  "public/nutsamorelogo.svg",
+  "public/logo.webp",
+  "public/nutsamorelogo.png",
+  "public/logo.png"
+];
+let logoIdx = 0;
+function handleLogoFallback(img) {
+  logoIdx++;
+  if (logoIdx < LOGO_SRC_LIST.length) {
+    img.src = LOGO_SRC_LIST[logoIdx];
+  } else {
+    img.onerror = null;
+  }
+}
+</script>
+<style>
+:root{
+  --bg:#F5E7DE; --card:#FFFCFA; --line:#EAD5C8;
+  --brown:#7A3E1F; --green:#1F4D35; --text:#5E4B40; --muted:#9A8174;
+  --serif:"Fraunces",Georgia,"Times New Roman",serif;
+  --sans:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*,*::before,*::after{box-sizing:inherit}
+html,body{margin:0}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);-webkit-font-smoothing:antialiased}
+main{max-width:460px;margin:0 auto;padding:30px 20px 36px}
+.logo{display:block;width:130px;max-width:80%;height:auto;margin:0 auto 22px}
+h1{font-family:var(--serif);font-weight:600;color:var(--brown);font-size:31px;line-height:1.08;letter-spacing:-.01em;text-align:center;margin:0}
+.sub{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--brown);font-size:17px;text-align:center;margin:10px 0 24px}
+.switch{display:grid;grid-template-columns:1fr 1fr;background:#EFD9CC;border-radius:999px;padding:4px;margin-bottom:22px}
+.switch button{appearance:none;border:0;background:transparent;border-radius:999px;padding:11px 6px;font:500 14px/1.2 var(--sans);color:var(--brown);cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px}
+.switch button[aria-pressed="true"]{background:var(--green);color:#fff}
+.flag{width:18px;height:12px;border-radius:2px;flex:none}
+.f-es{background:linear-gradient(#C60B1E 0 25%,#FFC400 25% 75%,#C60B1E 75%)}
+.f-be{background:linear-gradient(90deg,#1a1a1a 0 33.3%,#FDDA24 33.3% 66.6%,#EF3340 66.6%)}
+.btns{display:flex;flex-direction:column;gap:10px}
+.btn{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:58px;padding:13px 18px;border-radius:12px;text-decoration:none;font:600 15.5px/1.25 var(--sans)}
+.btn small{display:block;font-weight:400;font-size:12.5px;opacity:.8;margin-top:2px}
+.btn svg{flex:none}
+.b-green{background:var(--green);color:#fff}
+.b-brown{background:var(--brown);color:#fff}
+.b-line{background:transparent;color:var(--green);border:1.5px solid #CDB3A4}
+h2{font-family:var(--serif);font-weight:500;color:var(--brown);font-size:21px;margin:30px 0 12px}
+.prods{display:flex;flex-direction:column;gap:10px}
+.prod{display:flex;align-items:center;gap:14px;background:var(--card);border-radius:14px;padding:10px 14px 10px 10px;text-decoration:none;color:var(--text)}
+.prod img{width:64px;height:64px;object-fit:contain;border-radius:10px;background:#fff;flex:none}
+.prod b{display:block;font-family:var(--serif);font-weight:600;color:var(--brown);font-size:16px;line-height:1.2}
+.prod span{display:block;font-size:12.5px;color:var(--muted);margin-top:3px}
+.prod .go{margin-left:auto;color:var(--green);flex:none}
+.btn:focus-visible,.prod:focus-visible,.switch button:focus-visible{outline:3px solid #C99C83;outline-offset:3px}
+footer{margin-top:30px;text-align:center;font-size:12px;color:var(--muted)}
+[hidden]{display:none !important}
+</style>
+</head>
+<body>
+<main>
+  <img class="logo" id="site-logo" src="public/nutsamorelogo.webp" onerror="handleLogoFallback(this)" alt="Nut’s Amore">
+  <h1>Made with Love.<br>Made with Nuts.</h1>
+  <p class="sub" id="sub">Elige tu país</p>
+
+  <div class="switch" role="group" aria-label="País · Pays · Land">
+    <button type="button" data-c="es" aria-pressed="true"><span class="flag f-es"></span>España</button>
+    <button type="button" data-c="be" aria-pressed="false"><span class="flag f-be"></span>Belgique · België</button>
+  </div>
+
+  <!-- ESPAÑA -->
+  <section id="p-es">
+    <div class="btns">
+      <a class="btn b-green" data-l="es.store"><span>Comprar en <img src="public/logo dia.svg" alt="DIA" style="height: 1.2em; vertical-align: middle; margin-left: 4px;"></span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn b-brown" data-l="recipeBook"><span>Descarga el recetario<small>Gratis · recetas fáciles con nuestras cremas</small></span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg></a>
+      <a class="btn b-line" data-l="site">Visita nutsamore.com <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+    <h2>Nuestras cremas en <img src="public/logo dia.svg" alt="DIA" style="height: 1.2em; vertical-align: middle; margin-left: 4px;"></h2>
+    <div class="prods">
+      <a class="prod" data-l="es.avellanasDatiles"><img src="public/es-avellanas-datiles.jpg" alt="Avellanas y dátiles"><div><b>Avellanas y dátiles</b><span>Crema 175 g</span></div><span class="go"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+      <a class="prod" data-l="es.anacardosCoco"><img src="public/es-anacardos-coco.jpg" alt="Anacardos y coco"><div><b>Anacardos y coco</b><span>Crema 175 g</span></div><span class="go"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+      <a class="prod" data-l="es.mangoAlmendras"><img src="public/es-mango-almendras.jpg" alt="Mango y almendras"><div><b>Mango y almendras</b><span>Crema 175 g · Tropical Edition</span></div><span class="go"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+    </div>
+  </section>
+
+  <!-- BELGIQUE / BELGIË -->
+  <section id="p-be" hidden>
+    <div class="btns">
+      <a class="btn b-green" href="#produits"><span>Acheter / Kopen chez <img src="public/Logo_Colruyt.svg" alt="Colruyt" style="height: 1.1em; vertical-align: middle; margin-left: 4px;"></span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn b-brown" data-l="recipeBook"><span>Le livre de recettes<small>Gratis receptenboek</small></span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v12M6 11l6 6 6-6M5 20h14"/></svg></a>
+      <a class="btn b-line" data-l="site">nutsamore.com <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+    <h2 id="produits">Produits / Producten chez <img src="public/Logo_Colruyt.svg" alt="Colruyt" style="height: 1.1em; vertical-align: middle; margin-left: 4px;"></h2>
+    <div class="prods">
+      <a class="prod" data-l="be.brownAlmond"><img src="public/be-brown-almond.jpg" alt="Amandes grillées"><div><b>Amandes grillées</b><span>100% Brown Almond · 175 g</span></div><span class="go"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+      <a class="prod" data-l="be.pistachioAlmond"><img src="public/be-pistachio-almond.jpg" alt="Pistaches & amandes"><div><b>Pistaches & amandes</b><span>100% Pistachio & Almond · 175 g</span></div><span class="go"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+      <a class="prod" data-l="be.hazelnutDate"><img src="public/be-hazelnut-date.jpg" alt="Noisettes grillées & dattes"><div><b>Noisettes grillées & dattes</b><span>100% Hazelnut & Date · 175 g</span></div><span class="go"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+    </div>
+  </section>
+
+  <footer>© Nut’s Amore · Euro Company</footer>
+</main>
+
+<script>
+(function(){
+  const get = p => p.split(".").reduce((o,k)=>o && o[k], LINKS);
+  document.querySelectorAll("a[data-l]").forEach(a=>{
+    a.href = get(a.dataset.l) || "#";
+    if (/^https?:/.test(a.href)) { a.target = "_blank"; a.rel = "noopener"; }
+  });
+  const sub = {es:"Elige tu país", be:"Choisissez votre pays · Kies uw land"};
+  function show(c){
+    document.querySelectorAll(".switch button").forEach(b=>b.setAttribute("aria-pressed", String(b.dataset.c===c)));
+    document.getElementById("p-es").hidden = c!=="es";
+    document.getElementById("p-be").hidden = c!=="be";
+    document.getElementById("sub").textContent = sub[c];
+    document.documentElement.lang = c==="es" ? "es" : "fr";
+    try{ localStorage.setItem("na-country", c); }catch(e){}
+  }
+  document.querySelectorAll(".switch button").forEach(b=>b.addEventListener("click",()=>show(b.dataset.c)));
+  let saved=null; try{ saved=localStorage.getItem("na-country"); }catch(e){}
+  const q = new URLSearchParams(location.search).get("c");
+  show(q==="be"||q==="es" ? q : (saved==="be" ? "be" : "es"));
+})();
+</script>
+</body>
+</html>
